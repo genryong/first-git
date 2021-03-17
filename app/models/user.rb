@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+   
+  
   before_save { self.email.downcase! }
   validates :name, presence: true, length: { maximum: 50 }
   
@@ -7,4 +9,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
                     
   has_secure_password
+  
+  has_many :tasks
 end
