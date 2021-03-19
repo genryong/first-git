@@ -9,7 +9,7 @@ class TasksController < ApplicationController
   end
   
   def show
-     @task = current_user.tasks.find_by(id: params[:id])
+    
   end
   
   def new
@@ -33,8 +33,6 @@ class TasksController < ApplicationController
   end
   
   def update
-   
-    
     if @task.update(task_params)
       flash[:success] = 'Taskは正常に更新されました'
       redirect_to @task
